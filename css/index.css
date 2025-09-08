@@ -5,6 +5,24 @@ html { scroll-behavior: smooth; }
 body { position: relative; }
 
 /* Nav principal */
+
+.logo {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column; /* faz o slogan ficar embaixo */
+  line-height: 1.2;
+}
+
+.slogan {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #ffcc00; /* destaca em amarelo */
+  margin-top: 3px;
+}
+
+
 nav {
   position: fixed;
   top: 0; left: 0;
@@ -16,7 +34,7 @@ nav {
   display: flex; justify-content: space-between; align-items: center;
   padding: 15px 20px;
 }
-.logo { color: #fff; font-weight: 600; font-size: 1.3rem; }
+
 .nav-links { display: flex; list-style: none; }
 .nav-links li { margin: 0 15px; }
 .nav-links a { color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s; }
@@ -103,16 +121,42 @@ h1, h2 { margin-bottom: 20px; }
   .servico li { margin-bottom: 15px; }
   .foto img { max-width: 180px; }
 }
-.btn-nav{
-  width: 50px;   
-  border: none;
-  border-radius: 5px;
-  background: #eeff00;
-  font-weight: bold;
-  cursor: pointer;
-
+/* Por padrão o login do topo não aparece */
+.login-form-top {
+  display: none;
 }
-.login{
 
-  color: white;
+/* Só aparece em telas grandes */
+@media (min-width: 1025px) {
+  .login-form-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .login-form-top input {
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+
+  .btn-nav {
+    width: 60px;
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    background: #eeff00;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login {
+    color: white;
+    margin-right: 5px;
+    font-size: 16px;
+  }
 }
