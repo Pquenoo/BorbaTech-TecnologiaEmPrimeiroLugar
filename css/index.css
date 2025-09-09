@@ -67,8 +67,16 @@ nav {
 .close-btn { font-size: 2rem; cursor: pointer; margin-bottom: 20px; }
 
 /* Seções */
-section { min-height: 100vh; padding: 80px 20px 20px 20px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; color: #fff; }
-#home { background: #1abc9c; }
+section { 
+min-height: 100vh;
+padding: 80px 20px 20px 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+text-align: center;
+color: #fff; }
+#home { background: #1abc9c;padding-top: 90px; }
 #sobre { background: #3498db; }
 #servicos { background: #21255e; }
 #contato { background: #e74c3c; }
@@ -159,4 +167,184 @@ h1, h2 { margin-bottom: 20px; }
     margin-right: 5px;
     font-size: 16px;
   }
+}
+/* ===== Texto rotativo estilo TV desligando definitivo ===== */
+.rotating-text {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* ajusta ao tamanho do container */
+  height: 2em; /* altura suficiente */
+  margin: 15px auto 0 auto;
+  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.rotating-text span {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  display: block;
+  transform-origin: center center;
+  animation: tvOff 6s linear infinite;
+  white-space: nowrap;
+  z-index: 10; /* garante que fique sobre o fundo */
+}
+
+/* delays para cada frase */
+.rotating-text span:nth-child(2) { animation-delay: 1.5s; }
+.rotating-text span:nth-child(3) { animation-delay: 3s; }
+.rotating-text span:nth-child(4) { animation-delay: 4.5s; }
+
+/* animação estilo TV desligando */
+@keyframes tvOff {
+  0%   { opacity: 0; transform: scaleY(0); }
+  5%   { opacity: 1; transform: scaleY(1); }
+  30%  { opacity: 1; transform: scaleY(1); }
+  35%  { opacity: 0; transform: scaleY(0); }
+  100% { opacity: 0; transform: scaleY(0); }
+}
+
+/* RESPONSIVIDADE PARA O TEXTO ROTATIVO */
+@media (max-width: 1024px) {
+  .rotating-text {
+    font-size: 1.1rem;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rotating-text {
+    font-size: 1rem;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rotating-text {
+    font-size: 0.9rem;
+    max-width: 300px;
+    height: 1.8em; /* ajusta a altura para caber o texto */
+  }
+}
+/* Container transparente apenas para apresentação */
+.apresentacao-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.apresentacao {
+  background: rgba(0, 0, 0, 0.65); /* fundo semi-transparente */
+  padding: 40px 30px;
+  border-radius: 18px;
+  max-width: 650px;
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(8px); /* efeito vidro fosco */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.apresentacao:hover {
+  transform: translateY(-5px); /* dá um destaque quando passa o mouse */
+}
+
+.apresentacao .logo-home {
+  max-width: 100%;   /* ocupa até o limite do container */
+  height: auto;      /* mantém proporção da imagem */
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* centraliza a imagem */
+}
+
+.apresentacao p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  font-weight: 400;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+/* Botão WhatsApp estilizado */
+.btn-whatsapp {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #1ebe5d, #0c6c59);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 16px rgba(37, 211, 102, 0.6);
+}
+
+#depoimentos {
+  padding: 60px 20px;
+  background: transparent;
+  text-align: center;
+}
+
+#depoimentos h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+/* Container dos cards */
+.depoimentos-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* permite quebrar linha */
+}
+
+
+/* Cards */
+.card-depoimento {
+  background: rgba(255, 255, 255, 0.726); /* transparente */
+  padding: 20px 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(12px); /* efeito vidro */
+  -webkit-backdrop-filter: blur(12px); /* suporte safari */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* borda suave */
+}
+
+.card-depoimento:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+.card-depoimento h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.card-depoimento p {
+  font-size: 1rem;
+  color: #585858;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.avaliacao {
+  font-size: 1.2rem;
+  color: #FFD700;
 }

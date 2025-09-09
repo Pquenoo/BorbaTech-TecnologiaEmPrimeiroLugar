@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texto TV Off Rápido</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+    font-family: 'Courier New', monospace;
+    color: #0f0;
+    font-size: 2em;
+  }
+
+  .rotating-text {
+    position: relative;
+    width: 400px;
+    height: 60px;
+    overflow: hidden;
+  }
+
+  .rotating-text span {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    animation: tvOff 6s linear infinite 0s; /* duração reduzida pela metade */
+    display: inline-block;
+    transform-origin: center center;
+  }
+
+  .rotating-text span:nth-child(2) { animation-delay: 1.5s; }
+  .rotating-text span:nth-child(3) { animation-delay: 3s; }
+  .rotating-text span:nth-child(4) { animation-delay: 4.5s; }
+
+  @keyframes tvOff {
+    0% { opacity: 0; transform: scaleY(0); }
+    8% { opacity: 1; transform: scaleY(1); } /* aparece rápido */
+    33% { opacity: 1; transform: scaleY(1); }
+    40% { opacity: 0; transform: scaleY(0); } /* desaparece rápido */
+    100% { opacity: 0; transform: scaleY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="rotating-text">
+  <span>Hoje tem café</span>
+  <span>Hoje tem reunião</span>
+  <span>Hoje tem treino</span>
+  <span>Hoje tem descanso</span>
+</div>
+
+</body>
+</html>
