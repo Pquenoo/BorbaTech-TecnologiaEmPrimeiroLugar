@@ -193,9 +193,60 @@
 </section>
 
 <section id="contato">
-  <h1>Contato</h1>
-  <p>Coloque aqui suas informações de contato ou formulário.</p>
+  <div class="contato-container">
+
+    <h1>Contato</h1>
+    <p>Entre em contato conosco! Estamos prontos para te atender.</p>
+
+    <!-- Bloco de informações -->
+    <div class="contato-info">
+      <div class="info-item">
+        <h3>Telefone</h3>
+        <p>+55 21 9 9409-2156</p>
+      </div>
+      <div class="info-item">
+        <h3>E-mail</h3>
+        <p>borbatech.contato@gmail.com</p>
+      </div>
+      <div class="info-item">
+        <h3>Endereço</h3>
+        <p>Rua Exemplo, 123 - Rio de Janeiro, RJ</p>
+      </div>
+      <div class="info-item">
+        <h3>Redes Sociais</h3>
+        <p>
+          <a href="https://www.instagram.com/borbatech.info/">Instagram</a> | 
+          <a href="https://www.facebook.com/maxx.silva.92798">Facebook</a> | 
+          <a href="https://wa.me/21994092156">WhatsApp</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Formulário de contato -->
+    <form class="form-contato">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+      </div>
+      <div class="form-group">
+        <label for="assunto">Assunto</label>
+        <input type="text" id="assunto" name="assunto" placeholder="Assunto" required>
+      </div>
+      <div class="form-group">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem..." required></textarea>
+      </div>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+
+  </div>
 </section>
+
+
 
 <script src="Js/index.js"></script>
 </body>
